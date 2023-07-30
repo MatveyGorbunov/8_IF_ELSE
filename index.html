@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Угадайка</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    </head>
+<body>
+<div class="container">
+    <div class="row game-card align-items-center">
+        <div class="col col-md-4 offset-md-4">
+           
+            <!--"Приветствие"-->
+            <div class="card text-center greeting"> <!--hidden-->
+                <div class="card-header">
+                    <p class="m-0">Игра "Угадайка"</p>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-info" data-bs-toggle="collapse" href=".hideRules" id="btnStart">Перейти к правилам</button>
+                </div>
+            </div>
+            <!--"Приветствие"-->
+
+            <!--Правила и поля воода-->  
+            <div class="card text-center collapse hideRules"> 
+
+                <div class="card-header">
+                    <p class="valueRange">Введите минимальное и максимальное значение числа от 0 до 100, а я его угадаю! (число должно быть целым)</p> 
+                    <p class="guessNumber"><span id="guessNumber"></span></p> 
+                </div>
+
+                <div class="card-body">
+                    <div class="row no-gutters">
+                        <div class="col">
+                            <label for="formGroupInput">От</label>
+                            <input type="text" class="form-control" id="inputMin" placeholder="">
+                            <label for="formGroupInput2">До</label>
+                            <input type="text" class="form-control" id="inputMax" placeholder="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <div class="btn-group btn-group-md">
+                        <button class="btn btn-success" data-bs-toggle="collapse" href=".hideGame" id="btnGameRun">&#128526; Поехали!</button>
+                    </div>
+                </div>
+
+            </div>
+            <!--Правила и поля воода--> 
+
+            <!--Игровое поле--> 
+            <div class="card text-center collapse hideGame"> 
+                <div class="card-header">
+                    <p class="m-0">Вопрос №<span id="orderNumberField">3</span></p>
+                </div>
+                <div class="card-body">
+                    <div class="row no-gutters">
+                        <div class="col">
+                            <h3 class="card-title m-0"><span id="answerField">Вы загадали число 3?</span></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="btn-group btn-group-md">
+                        <button class="btn btn-danger" id="btnLess">&#129047;<br>Меньше</button>
+                        <button class="btn btn-success" id="btnEqual">Верно!</button>
+                        <button class="btn btn-warning" id="btnOver">Больше<br>&#129045;</button>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-link" id="btnRetry">Заново</button>
+                </div>
+            </div>
+            <!--Игровое поле--> 
+
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
